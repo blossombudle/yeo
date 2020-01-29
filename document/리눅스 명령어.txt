@@ -1,0 +1,115 @@
+ls : list 보여주기
+ls -al : 시간까지 보여줌
+man 명령 : 명령어 사용법
+
+mkdir test : test 디렉토리 만들기
+cd : change dierctroy
+cd - : 이전디렉토리
+
+cd / : 최상위 디렉토리
+cd ~ : 사용자 홈 디렉토리
+pwd : 현재 디렉토리 위치
+
+ls -a: .a 숨긴파일
+file 파일명 : 파일명에 해당하는 파일 type
+
+cat 파일명
+more 파일명
+less 다시 백 할 수 있다 ctrl + b(한페이지), k(한개씩), j 전진?
+/문자열 : 문자열을 찾는다
+
+cat >> a.txt : 출력리다이렉트
+
+tail -f 파일명 : 파일데이터 감시
+ctrl c로 멈춘다.
+
+cp는 복사할 때
+cp work work.cpli
+mv는 옮기거나 이동할 때
+mv work.s work.sl
+
+rmdir 디렉토리 : 비어있을 때 삭제
+rm -rf 디렉토리 : 비어있지 않을 때 삭제
+rm -ri 디렉토리 : 골라서 삭제(y/n)
+
+-이전 디렉
+~홈 디렉
+. 현재 디렉
+..상위 디렉
+
+touch -를 사용하여 수정시간 변경
+
+history : 지금까지 사용한 명령어를 나열
+!번호 : 해단 명령어 실행
+
+파일에서 문자열 찾기(grep)
+파일찾기 + 프로그램 실행(find)
+
+find ./ -name a.txt -exec rm {} \;
+a.txt를 현재디렉토리에서 찾아 모두 삭제
+
+ln wokr work.ln(하드웨어적인 바로가기)
+ln -s 디렉토리 바로가기명 : 바로가기명 -> 디렉토리(소프트적인)
+
+vi a.txt 수정u
+esc :q 편집기 나오기
+
+vi.txt
+명령, 편집, 마지막(esc :q)
+명령에서 편집들어가기 (i,a)
+
+:sh  vi txt에서 잠깐 나오기 
+:exit   들어가기
+
+!$:방금했던 명령의 인자만 갖고오기
+ex: nm led
+    size !$(led)
+
+less /etc/services(ser정도만 치고 tab)
+맨밑에 /unix
+(more도 같음)
+
+grep -n UNIX /etc/services
+
+
+대문자 o를 누르면 위에 삽입
+dd는 삭제
+s/to/in (스트링을 찾아서 in을 to로 바꾼다)
+%s/to/in/g(전부다 바꾼다)
+r abc.txt(삽입)
+:sh 잠시 빠져나오기
+
+find . -name e.txt -exec cp {} backup.txt \;
+파일을 찾아서 어디로 복사해라
+
+find . -user user2 -exec rm -rf {} \;
+tar zxvfp VMwaretools
+
+cvf(creat 묶기)  xvf(풀기)  
+
+history > myshare/myhistory.txt
+
+cp /etc/services .
+
+tar tvf(무엇인지 보는 것) a.tar
+
+cp services services2
+
+tar zcvf a.gz services services2
+./vi 
+chmod 777 services(모두 쓸 수 있게 바꾸는)
+
+umask 파일과 디렉토리를 만들때 저런 상태로 만들겠다(디폴트)
+0333()
+
+chmod 4744 utest.txt(유저의 권한을 얻는다 s)
+
+user   group   other
+rwx    rxw      rwx
+421    421     421
+   4s     2s        1t
+sudo tail -5 /etc/shadow
+
+sudo addgroup group777
+
+sudo gpasswd -a user5 group777
